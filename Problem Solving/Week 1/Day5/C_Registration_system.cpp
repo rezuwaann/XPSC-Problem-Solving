@@ -7,30 +7,20 @@ int main()
 
     int n;
     cin >> n;
-    map<string, bool> mp;
+    map<string, int> mp;
     while (n--)
     {
         string a;
         cin >> a;
-        if (!mp[a])
+        if (mp[a] == 0)
         {
-            mp[a] = true;
+            mp[a]++;
             cout << "OK" << endl;
         }
         else
         {
-            // int n = a.size();
-            // int lastchar = a[n - 1];
-            while (true)
-            {
-                mp[b] = true;
-                string b = a + lastchar;
-                cout << b << endl;
-                if (!mp[b])
-                {
-                    break;
-                }
-            }
+            cout << a << mp[a] << endl;
+            mp[a]++;
         }
     }
 
